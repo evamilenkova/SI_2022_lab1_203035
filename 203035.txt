@@ -1,0 +1,113 @@
+git clone https://github.com/evamilenkova/SI_2022_lab1_203035 - клонирање на проектот 
+C:\Users\User\Desktop\SI_2022_lab1_203035>git add --all   -фајлот се додава во stage 
+C:\Users\User\Desktop\SI_2022_lab1_203035>git commit -m "Add 5 items to the shopping list" - прв commit на фајлот со порака
+C:\Users\User\Desktop\SI_2022_lab1_203035>git commit -a -m "Add quantities to the items." -промена на фајл и нов commit
+C:\Users\User\Desktop\SI_2022_lab1_203035>git branch branch1 - создавање гранка branch1
+C:\Users\User\Desktop\SI_2022_lab1_203035>git branch branch2 -создавање гранка branch2
+
+C:\Users\User\Desktop\SI_2022_lab1_203035>git log
+commit bed4ddaee8ce2012fbc2851f23caf5b5c9eba40a (HEAD -> master, branch2, branch1)
+Author: evamilenkova <emilenkova@yahoo.com>
+Date:   Fri Mar 18 01:57:56 2022 +0100
+
+    Add quantities to the items
+
+commit 3b6312939cd7db3137f6cd030efae6007d5d3fe7
+Author: evamilenkova <emilenkova@yahoo.com>
+Date:   Fri Mar 18 01:56:53 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit f917b43372b16a20ac22f6a565cfca8461f1121b (origin/master, origin/HEAD)
+Author: evamilenkova <86674681+evamilenkova@users.noreply.github.com>
+Date:   Fri Mar 18 01:14:10 2022 +0100
+
+    Initial commit
+
+
+C:\Users\User\Desktop\SI_2022_lab1_203035>git push --all origin  -Синхронизација на сите гранки со оддалечениот репозиториум
+C:\Users\User\Desktop\SI_2022_lab1_203035>git checkout branch1 - префрлање на гранка branch1
+C:\Users\User\Desktop\SI_2022_lab1_203035>git commit -a -m "Change quantity of item #5" -нова промена и commit
+C:\Users\User\Desktop\SI_2022_lab1_203035>git checkout master -враќање на гранката master
+C:\Users\User\Desktop\SI_2022_lab1_203035>git commit -a -m "Change quantity of item #2" промена и commit
+C:\Users\User\Desktop\SI_2022_lab1_203035>git push --all origin -Синхронизација со оддалечениот репозиториум
+C:\Users\User\Desktop\SI_2022_lab1_203035>git checkout branch2 -префрлање на гранка branch2
+C:\Users\User\Desktop\SI_2022_lab1_203035>git commit -a -m "Modify item #4" промена и commit
+
+
+C:\Users\User\Desktop\SI_2022_lab1_203035>git log
+commit c804b46688ae8dd3b0a075c0e5f161ea627090fa (HEAD -> branch2)
+Author: evamilenkova <emilenkova@yahoo.com>
+Date:   Fri Mar 18 12:23:30 2022 +0100
+
+    Modify item #4
+
+commit bed4ddaee8ce2012fbc2851f23caf5b5c9eba40a (origin/branch2)
+Author: evamilenkova <emilenkova@yahoo.com>
+Date:   Fri Mar 18 01:57:56 2022 +0100
+
+    Add quantities to the items
+
+commit 3b6312939cd7db3137f6cd030efae6007d5d3fe7
+Author: evamilenkova <emilenkova@yahoo.com>
+Date:   Fri Mar 18 01:56:53 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit f917b43372b16a20ac22f6a565cfca8461f1121b
+Author: evamilenkova <86674681+evamilenkova@users.noreply.github.com>
+Date:   Fri Mar 18 01:14:10 2022 +0100
+
+    Initial commit
+
+
+
+C:\Users\User\Desktop\SI_2022_lab1_203035>git commit -a -m "add item #6" - промена и нов commit 
+C:\Users\User\Desktop\SI_2022_lab1_203035>git rebase -i -HEAD~2
+(во интерактивен mode ги спојуваме претходните два commits во еден со порака "Modify item #4 and add item #6" -промена на pick во squash)
+
+C:\Users\User\Desktop\SI_2022_lab1_203035>git log
+commit 4511415bc9bb15a9a7f5d8dccd2db81656c1209b (HEAD -> branch2)
+Author: evamilenkova <emilenkova@yahoo.com>
+Date:   Fri Mar 18 12:23:30 2022 +0100
+
+    Modify item #4 and add item #6
+
+commit bed4ddaee8ce2012fbc2851f23caf5b5c9eba40a (origin/branch2)
+Author: evamilenkova <emilenkova@yahoo.com>
+Date:   Fri Mar 18 01:57:56 2022 +0100
+
+    Add quantities to the items
+
+commit 3b6312939cd7db3137f6cd030efae6007d5d3fe7
+Author: evamilenkova <emilenkova@yahoo.com>
+Date:   Fri Mar 18 01:56:53 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit f917b43372b16a20ac22f6a565cfca8461f1121b
+Author: evamilenkova <86674681+evamilenkova@users.noreply.github.com>
+Date:   Fri Mar 18 01:14:10 2022 +0100
+
+    Initial commit
+
+C:\Users\User\Desktop\SI_2022_lab1_203035>git checkout master -враќање на гранката master
+C:\Users\User\Desktop\SI_2022_lab1_203035>git merge branch1 - спојување на гранката master so branch 1
+Merge made by the 'ort' strategy. - гранките branch1 и master се споени со рекурзивна стратегија, нема конфликти
+
+
+C:\Users\User\Desktop\SI_2022_lab1_203035>git merge branch2 - спојување на гранката  branch2 со master
+- Настанува конфликт во shopiing_list.txt фајлот кој го решавам со зачувување на промените од branch2.
+CONFLICT (content): Merge conflict in shopping_list.txt
+
+C:\Users\User\Desktop\SI_2022_lab1_203035>git commit -a -m "Merge branch2 to master" - после решавање на конфликтот, фајлот е modified затоа ја користам оваа команда за add i commit.
+
+C:\Users\User\Desktop\SI_2022_lab1_203035>git add .
+C:\Users\User\Desktop\SI_2022_lab1_203035>git commit -m "Add docs"
+C:\Users\User\Desktop\SI_2022_lab1_203035>git push --аll origin
+
+
+
+
+
+
