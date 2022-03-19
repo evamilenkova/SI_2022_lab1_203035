@@ -2,4 +2,4 @@ milk x 2
 cheese x 2
 cookie x 5
 fish x 1
-bacon x 2
+bacon x 1
